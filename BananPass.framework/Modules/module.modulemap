@@ -1,0 +1,11 @@
+framework module BananPass {
+  umbrella header "BananPass.h"
+
+  export *
+  module * { export * }
+}
+
+module BananPass.Swift {
+    header "BananPass-Swift.h"
+    requires objc
+}
