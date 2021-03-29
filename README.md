@@ -40,8 +40,6 @@ please use `import BananPass` in Xcode.
 			end
 
 
-			### Initialize
-
 **Initialization**
 Before you use the SDK, you must initialize it, either by using by using bearer tokens (provided by an external server).
 
