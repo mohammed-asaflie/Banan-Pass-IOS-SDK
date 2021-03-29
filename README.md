@@ -15,7 +15,7 @@ This document provides detailed information about the Banan Core iOS SDK.
 - Xcode 12.0.
 
 
-###Install SDK Using CocoaPods
+### Install SDK Using CocoaPods
 
 please use `import BananPass` in Xcode.
 
