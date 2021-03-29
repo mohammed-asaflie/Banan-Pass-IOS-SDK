@@ -6,7 +6,7 @@ BananPass is available through CocoaPods. To install it, simply add the followin
 
 
 ```bash
-pod 'BananPass', :git => 'https://github.com/mohammed-asaflie/Banan-Pass-IOS-SDK.git'
+pod 'BananPass'
 ```
 
 ## Usage
