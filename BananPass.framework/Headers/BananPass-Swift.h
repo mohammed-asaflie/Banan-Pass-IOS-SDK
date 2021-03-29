@@ -208,6 +208,15 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSCoder;
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC9BananPass16BananImageButton")
+@interface BananImageButton : UIButton
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC9BananPass9BananPass")
 @interface BananPass : NSObject
@@ -222,17 +231,17 @@ SWIFT_CLASS("_TtC9BananPass13BaseViewModel")
 @end
 
 
-SWIFT_CLASS("_TtC9BananPass25CheckPhoneNumberViewModel")
-@interface CheckPhoneNumberViewModel : BaseViewModel
-@end
-
-@class NSCoder;
-
 SWIFT_CLASS("_TtC9BananPass17SignUpBananButton")
 @interface SignUpBananButton : UIButton
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
+
+
+
+
+
+
 
 
 #if __has_attribute(external_source_symbol)
