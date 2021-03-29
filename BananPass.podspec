@@ -19,7 +19,7 @@ DESC
 s.homepage          = 'https://i-valley.tech'
 s.license           = { :type => 'Apache-2.0', :file => 'LICENSE' }
 s.authors            = { 'amir' => 'amir.whiz@gmail.com' }
-s.source            = { :http => 'https://github.com/mohammed-asaflie/Banan-Pass-IOS-SDK.git'}
+s.source            = { :git => 'https://github.com/mohammed-asaflie/Banan-Pass-IOS-SDK.git', :tag => s.version.to_s }
 
 s.swift_version = '5.0'
 s.ios.deployment_target = '12.0'
