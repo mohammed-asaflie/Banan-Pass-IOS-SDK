@@ -54,4 +54,4 @@ Before you use the SDK, you must initialize it, either by using by using bearer 
         self.present(banan, animated: true, completion: nil)
 
 
-***Info-valley Inc.
+**Info-valley Inc.**
