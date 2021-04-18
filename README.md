@@ -21,8 +21,7 @@ please use `import BananPass` in Xcode.
 
 1. Add the following in the podfile to get **all** the modules:
 
-		platform :ios, '11'
-		pod 'BananPass'
+		pod 'BananPass', '~> 1.2.2'
 
 
 2. Enable "BUILD\_FOR\_DISTRIBUTION" for all Acuant pod frameworks in Build Settings.
