@@ -42,13 +42,55 @@ please use `import BananPass` in Xcode.
 **Initialization**
 Before you use the SDK, you must initialize it, either by using by using bearer tokens (provided by an external server).
 
-1. Initialize the SDK.
+1. Initialize the SDK:
 
-		let banan = BananPass.startSDK(accessToken: "provided_token") { (token, err) in
-            print("token is: ",token)
-            print("error:", err)
+	BananCore.shared.initialize(server: "serverURL", accessToken: token) { (success) in
+            print("is intialize ",success)
         }
-        self.present(banan, animated: true, completion: nil)
+2. Start BananCore by adding simple line of code
+	let bananCore = BananCore.shared.startSDK { (token, err) in
+            if let err = err {
+                print("err", err)
+            }
+            print("Token is: ", token)
+        }
+        present(bananCore, animated: true, completion: nil)
+	
+**Banan Core Services**
+BananCore provides external services which can be independently used:
 
+1. Liveness Service:
+Provides functionality to detect whether the person image is live or not 
+Direct Liveness Check: This is done through sending a UIImage or Data of the image.
+
+	BananCoreServices.liveness(image: UIImage(named: "Provided_Image")) { (isLive, err) in
+		if let err = err {
+			print("err", err)
+		}
+		print(isLive)
+	}
+2. Auto Capture Liveness Check: This will prompt a dialog to use the device camera to automatically capture user image and perform liveness check. (don’t forget to add NSCameraUsageDescription property in info.plist).
+
+	BananCoreServices.livenessAutoCapture { (isLive, err) in
+		    if let err = err {
+			print("err", err)
+		    }
+		    print(isLive)
+	}
+	
+3. Face Match Check: this will perform facial matching check between two different images and returns whether it was the same person or not in the provided images. (both UIImage or Data of the image can be used)
+	
+	BananCoreServices.faceMatch(firstImage: UIImage(named: "First_Image"), secondImage: UIImage(named:"Second_Image")) { (isMatched, err) in
+            if let err = err {
+                print("err", err)
+            }
+            print(isMatched)
+        }
+4. Auto Face Capture: will automatically detect and capture user image. (don’t forget to add NSCameraUsageDescription property in info.plist).
+	
+	let autofaceCapture = BananCoreServices.faceCapture { (imageData) in
+            print(imageData)
+        }
+        present(autofaceCapture, animated: true, completion: nil)
 
 **Info-valley Inc.**
