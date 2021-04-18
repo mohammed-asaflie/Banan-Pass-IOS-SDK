@@ -44,10 +44,13 @@ Before you use the SDK, you must initialize it, either by using by using bearer 
 
 1. Initialize the SDK:
 
+	```swift
 	BananCore.shared.initialize(server: "serverURL", accessToken: token) { (success) in
             print("is intialize ",success)
         }
 2. Start BananCore by adding simple line of code
+	
+	```swift
 	let bananCore = BananCore.shared.startSDK { (token, err) in
             if let err = err {
                 print("err", err)
@@ -63,6 +66,7 @@ BananCore provides external services which can be independently used:
 Provides functionality to detect whether the person image is live or not 
 Direct Liveness Check: This is done through sending a UIImage or Data of the image.
 
+	```swift
 	BananCoreServices.liveness(image: UIImage(named: "Provided_Image")) { (isLive, err) in
 		if let err = err {
 			print("err", err)
@@ -71,6 +75,7 @@ Direct Liveness Check: This is done through sending a UIImage or Data of the ima
 	}
 2. Auto Capture Liveness Check: This will prompt a dialog to use the device camera to automatically capture user image and perform liveness check. (don’t forget to add NSCameraUsageDescription property in info.plist).
 
+	```swift
 	BananCoreServices.livenessAutoCapture { (isLive, err) in
 		    if let err = err {
 			print("err", err)
@@ -88,9 +93,5 @@ Direct Liveness Check: This is done through sending a UIImage or Data of the ima
         }
 4. Auto Face Capture: will automatically detect and capture user image. (don’t forget to add NSCameraUsageDescription property in info.plist).
 	
-	let autofaceCapture = BananCoreServices.faceCapture { (imageData) in
-            print(imageData)
-        }
-        present(autofaceCapture, animated: true, completion: nil)
 
 **Info-valley Inc.**
