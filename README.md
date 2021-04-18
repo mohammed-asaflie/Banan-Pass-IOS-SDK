@@ -85,6 +85,7 @@ Direct Liveness Check: This is done through sending a UIImage or Data of the ima
 	
 3. Face Match Check: this will perform facial matching check between two different images and returns whether it was the same person or not in the provided images. (both UIImage or Data of the image can be used)
 	
+	```swift
 	BananCoreServices.faceMatch(firstImage: UIImage(named: "First_Image"), secondImage: UIImage(named:"Second_Image")) { (isMatched, err) in
             if let err = err {
                 print("err", err)
@@ -93,5 +94,10 @@ Direct Liveness Check: This is done through sending a UIImage or Data of the ima
         }
 4. Auto Face Capture: will automatically detect and capture user image. (don’t forget to add NSCameraUsageDescription property in info.plist).
 	
+	```swift
+	let autofaceCapture = BananCoreServices.faceCapture { (imageData) in
+            print(imageData)
+        }
+        present(autofaceCapture, animated: true, completion: nil)
 
 **Info-valley Inc.**
