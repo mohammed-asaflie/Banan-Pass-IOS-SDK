@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 s.name              = 'BananPass'
-s.version           = '1.2.3'
+s.version           = '1.2.4'
 s.summary           = 'Banan-Core SDK is a mobile application library that provide identity management service.'
 
 s.description      = <<-DESC
