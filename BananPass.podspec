@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 s.name              = 'BananPass'
-s.version           = '1.2.5'
+s.version           = '1.3.0'
 s.summary           = 'Banan-Core SDK is a mobile application library that provide identity management service.'
 
 s.description      = <<-DESC
@@ -17,6 +17,9 @@ s.swift_version = '5.0'
 s.ios.deployment_target = '12.0'
 s.ios.vendored_frameworks = 'BananPass.framework'
 
+s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
 
 
 # Add all the dependencies
@@ -24,7 +27,7 @@ s.ios.vendored_frameworks = 'BananPass.framework'
 s.dependency 'PusherSwift', '8.0.0'
 s.dependency 'Alamofire'
 s.dependency 'lottie-ios'
-s.dependency 'AcuantiOSSDKV11/AcuantImagePreparation'
+s.dependency 'AcuantiOSSDKV11/AcuantImagePreparation', '11.4.9'
 s.dependency 'AcuantiOSSDKV11/AcuantPassiveLiveness'
 s.dependency 'AcuantiOSSDKV11/AcuantFaceCapture'
 s.dependency 'AcuantiOSSDKV11/AcuantCamera/Document'

@@ -1,0 +1,90 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name BananPass
+import AVFoundation
+import AcuantCommon
+import AcuantImagePreparation
+import AcuantPassiveLiveness
+import AcuantiOSSDKV11
+import Alamofire
+@_exported import BananPass
+import Foundation
+import Lottie
+import PusherSwift
+import SnapKit
+import Swift
+import UIKit
+@objc @_inheritsConvenienceInitializers open class BananPass : ObjectiveC.NSObject {
+  public static func startSDK(accessToken: Swift.String, completion: @escaping (Swift.String?, Swift.String?) -> Swift.Void) -> UIKit.UIViewController
+  @objc deinit
+  @objc override dynamic public init()
+}
+public enum BananCoreUserState {
+  case verified
+  case pendingKYC
+  case pendingPhone
+  case notVerified
+  case kycDocument
+  case kycLiveness
+  public static func == (a: BananPass.BananCoreUserState, b: BananPass.BananCoreUserState) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public struct BananCoreUser {
+}
+@objc @_inheritsConvenienceInitializers open class BananCoreModules : ObjectiveC.NSObject {
+  public static func login(callback: ((BananPass.BananCoreUser?) -> Swift.Void)?) -> UIKit.UIViewController
+  public static func signup(callback: ((BananPass.BananCoreUser?) -> Swift.Void)?) -> UIKit.UIViewController
+  public static func forgotPassword(callback: ((BananPass.BananCoreUser?) -> Swift.Void)?) -> UIKit.UIViewController
+  public static func document(callback: ((BananPass.BananCoreUser?) -> Swift.Void)?) -> UIKit.UIViewController
+  public static func faceMatch(callback: ((BananPass.BananCoreUser?) -> Swift.Void)?) -> UIKit.UIViewController
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BaseViewModel : ObjectiveC.NSObject {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class BaseTableViewController<T> : UIKit.UITableViewController where T : BananPass.BaseViewModel {
+  @objc override dynamic public func viewDidLoad()
+  @objc deinit
+  @objc override dynamic public init(style: UIKit.UITableView.Style)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @IBDesignable open class BananImageButton : UIKit.UIButton {
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class BananCore : ObjectiveC.NSObject {
+  public static var shared: BananPass.BananCore
+  public func startSDK(completion: @escaping (Swift.String?, Swift.String?) -> Swift.Void) -> UIKit.UIViewController
+  public func initializeServices(server: Swift.String, accessToken: Swift.String, completion: ((Swift.Bool) -> Swift.Void)?)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SignUpBananButton : UIKit.UIButton {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class BananCoreServices : ObjectiveC.NSObject {
+  public static func liveness(image: UIKit.UIImage, completion: @escaping (Swift.Bool?, Swift.String?) -> Swift.Void)
+  public static func liveness(image: Foundation.Data, completion: @escaping (Swift.Bool?, Swift.String?) -> Swift.Void)
+  public static func livenessAutoCapture(completion: @escaping (Swift.Bool?, Swift.String?) -> Swift.Void) -> UIKit.UIViewController
+  public static func faceMatch(firstImage: UIKit.UIImage, secondImage: UIKit.UIImage, completion: @escaping (Swift.Bool?, Swift.String?) -> Swift.Void)
+  public static func faceMatch(firstImage: Foundation.Data, secondImage: Foundation.Data, completion: @escaping (Swift.Bool?, Swift.String?) -> Swift.Void)
+  public static func faceCapture(completion: @escaping (Foundation.Data) -> Swift.Void) -> UIKit.UIViewController
+  public static func documentOCR(frontImage: UIKit.UIImage, backImage: UIKit.UIImage?, completion: @escaping (BananPass.ServiceOCRResponse?, Swift.String?) -> Swift.Void)
+  public static func documentCapture(completion: @escaping (UIKit.UIImage, UIKit.UIImage?) -> Swift.Void) -> UIKit.UIViewController
+  public static func documentCaptureOCR(completion: @escaping (BananPass.ServiceOCRResponse?, Swift.String?) -> Swift.Void) -> UIKit.UIViewController
+  @objc deinit
+  @objc override dynamic public init()
+}
+public typealias ServiceOCRResponse = [BananPass.ServiceOCRData]
+public struct ServiceOCRData : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct BananCoreServerData {
+  public init(domain: Swift.String, mainPort: Swift.String, secondaryPort: Swift.String)
+}
